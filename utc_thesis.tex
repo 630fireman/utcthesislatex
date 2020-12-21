@@ -1,0 +1,364 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% This template is distributed with ABSOLUTELY NO WARRANTY.
+% It serves as a guideline and constitutes a basic structure for a
+% thesis/dissertation. The user assumes full responsibility for formatting
+% and typesetting their document and for verifying that all the thesis
+% requirements set by the University of Chattanooga are met.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% O P T I O N S:
+% 1. thesis/dissertation
+% 2. monochrome
+% 3. all options provided by the report class
+%\documentclass[thesis,letterpaper,12pt]{utthesis} % thesis, one side
+% some alternatives are:
+\documentclass[thesis,monochrome,letterpaper,12pt]{utthesis} %thesis, one side, monochrome text
+%\documentclass[thesis,twoside,letterpaper,12pt]{utthesis} % thesis, two side
+%\documentclass[thesis,monochrome,twoside,letterpaper,12pt]{utthesis} % thesis, two side, monochrome text
+% for a dissertation, replace the thesis option by dissertation:
+% \documentclass[dissertation,letterpaper,12pt]{utthesis} . . .
+\renewcommand{\baselinestretch}{2.0} 	 % line Spacing
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TO DO: FILL IN YOUR INFORMATION BELOW - READ THIS SECTION CAREFULLY
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{\uppercase{Title here}}% title of thesis
+\author{Your Name}         % author's name
+\copyrightYear{2020}            % copyright year of your thesis/dissertation
+\graduationMonth{December}           % month of graduation of your thesis/dissertation
+\majorProfessor{Your Advisor}	    % advisor's name
+\keywords{}	% keywords (optional) separated by commas - these are used in the PDF file properties
+\major{Your major}	% major: Mechanical Engineering, Aerospace Engineering, Mathematics...
+\degree{Master of Science}	    % degree: Doctor of Philosophy, Master of Science, Master of Engineering...
+\college{College of Engineering and Computer Science}           %
+\dept{Mechanical Engineering}	% department
+\university{The University of Tennessee at Chattanooga}	% school name
+% THIS TEMPLATE ACCOMMODATES UP TO 5 COMMITTEE MEMBERS - ENTER ONLY THE NAMES OF THE MEMBERS ON YOUR COMMITTEE
+\numberOfCommitteeMembers{3} % enter the number of committee members
+\committeeMemberA {Committee Chair}	% name of first committee member
+\committeeMemberTitleA {chair title}
+\committeeMemberRoleA {(Chair)}
+\committeeMemberB {member}	% name of second committee member
+\committeeMemberTitleB {title}
+\committeeMemberRoleB {(Committee Member)}
+\committeeMemberC {member}	% ... you get the trend!
+\committeeMemberTitleC {title}
+\committeeMemberRoleC {(Committee Member)}
+%\committeeMemberD {member}	% if your committee has less than 4 members, you do not need to edit the
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LOAD SOME USEFUL PACKAGES
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{indentfirst}
+\usepackage{verbatim}      % allows block comments \begin{comment} etc
+\usepackage{nomencl}                    				% produces a nomenclature
+\usepackage{float}                      					% figure floats
+\usepackage[numbers]{natbib}                     				% this package allows you to link your references
+\usepackage{graphicx}
+\graphicspath{ {figures/}{figures/eps/}{figures/pdf/} }	% specify the path where figures are located
+\usepackage{fancyhdr}                   				% fancy headers and footers
+\usepackage{url}                        					% nicely format url breaks
+%\usepackage[inactive]{srcltx}		 			% necessary to use forward and inverse searching in DVI
+\usepackage{relsize}                    				% font sizing hierarchy
+\usepackage{booktabs}                   				% professional looking tables
+%\usepackage[config, labelfont={bf}]{caption,subfig} 	% nice sub figures
+\usepackage{mathrsfs}                   				% additional math scripts
+\usepackage{setspace}
+%\usepackage{subfigure}
+\usepackage{tocloft}
+\usepackage{subfig}% subcaptions for subfigures
+\usepackage{titlesec}
+\usepackage[format=hang,labelsep=space,skip=20pt]{caption}
+\usepackage{algpseudocode}
+%\usepackage{algorithm}
+\usepackage[linesnumbered, boxed]{algorithm2e}
+\usepackage{setspace}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+%added
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{authblk}
+\renewcommand\Affilfont{\small}
+\usepackage[T1]{fontenc}
+%\RequirePackage[OT1]{fontenc}
+%\usepackage[ansinew]{inputenc}
+\usepackage{lmodern}
+\usepackage{setspace}
+\doublespacing
+%\usepackage[letterpaper]{geometry}
+\geometry{textheight=8.8in,textwidth=6in}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\usepackage{color}
+\usepackage{listings}
+% \usepackage{pstricks}
+%\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    %backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+    language=[90]Fortran,                 % the language of the code
+    rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+    title=\lstname                   % show the filename of files
+}
+
+\lstset{style=mystyle}
+
+
+\graphicspath{{./figures/}}
+
+%\newtheorem{theorem}{Theorem}
+\newtheorem{remarkk}{Remark}
+\renewcommand\qedsymbol{$\blacksquare$}
+\newtheorem{defn}{Definition}
+
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand\mynorm[1]{\left\lVert#1\right\rVert}
+
+
+\newenvironment{dedication}
+{
+%   \cleardoublepage
+%   \thispagestyle{empty}
+%   \vspace*{\stretch{1}}
+   \hfill\begin{minipage}[t]{0.575\textwidth}
+   \raggedright
+}%
+{
+   \end{minipage}
+   \vspace*{\stretch{3}}
+   \clearpage
+}
+
+%%% PACKAGES THAT ARE PRELOADED WITH THE CLASS ARE: amsmath,amsthm,amssymb,setspace,geometry,hyperref,and color
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\renewcommand{\contentsname}{
+%	\begin{center}
+%	 	\normalsize TABLE OF CONTENTS
+%	 \end{center}
+%} %center the table of contents header, change it to table of contents, and make it the normal font size.
+%\renewcommand{\listfigurename}{
+%	\begin{center}
+%%	 	\normalsize LIST OF FIGURES
+%	 \end{center}
+%}
+%%\renewcommand{\listtablename}{
+%	\begin{center}
+%%		\normalsize LIST OF TABLES
+%	\end{center}
+%}
+%\renewcommand{\bibname}{
+%	\begin{center}
+%	 	\normalsize REFERENCES
+%	 \end{center}
+%}
+%\setcounter{secnumdepth}{0} %turn off numbering for all but chapters in the table of contents
+\setcounter{secnumdepth}{0} %turn off numbering for all but chapters in the table of contents
+\renewcommand{\cftchapnumwidth}{2em}
+\setlength{\cftchapindent}{0.5in}
+\setlength{\cftsecindent}{1in}
+\setlength{\cftsubsecindent}{1.25in}
+\setlength{\cftsubsubsecindent}{1.5in}
+\renewcommand{\cftdotsep}{1}
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+
+
+
+
+
+%\renewcommand*\thechapter{\arabic{chapter}.}
+
+%TOC formatting
+\setcounter{secnumdepth}{0} %turn off numbering for all but chapters in the table of contents
+\renewcommand{\cftchapnumwidth}{2em}
+\setlength{\cftchapindent}{.5in}
+\renewcommand{\cftpartleader}{\cftdotfill{1}}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\renewcommand{\cftsecindent}{1in}
+%\cftsetrmarg{0.5in}
+\setcounter{tocdepth}{1}
+
+%Set proper spacing after lot, lof, toc, headings
+\setlength{\cftbeforetoctitleskip}{0.45in}
+\setlength{\cftaftertoctitleskip}{1em}
+\setlength{\cftafterloftitleskip}{1em}
+\setlength{\cftafterlottitleskip}{1em}
+\setcounter{tocdepth}{3}
+\setlength{\cftbeforepartskip}{1.5em}
+\setlength{\cfttabindent}{0pt} %for tables
+\setlength{\cftfigindent}{0pt} %for figures
+\setlength{\cfttabnumwidth}{0.9in} %for tables
+\setlength{\cftfignumwidth}{0.9in} %for figures
+\renewcommand{\cftchappagefont}{\fontsize{11}{13}}
+\renewcommand{\cftchapfont}{\fontsize{11}{13}}
+\renewcommand{\cftpartpagefont}{\fontsize{11}{13}}
+\renewcommand{\cftpartfont}{\fontsize{11}{13}}
+\renewcommand{\cftsecfont}{\fontsize{11}{13}}
+\renewcommand{\cftchapafterpnum}{\vspace{1em}}
+\renewcommand{\cfttabaftersnumb}{\hspace*{-0.5in}}
+\renewcommand{\cftfigaftersnumb}{\hspace*{-0.5in}}
+
+
+\setlength{\cftbeforefigskip}{1em}
+\setlength{\cftbeforetabskip}{1em}
+
+%Remove the added space between chapters from toc, lof, lot
+\makeatletter
+\def\@chapter[#1]#2{\ifnum \c@secnumdepth >\m@ne
+                         \refstepcounter{chapter}%
+                         \typeout{\@chapapp\space\thechapter.}%
+                         \addcontentsline{toc}{chapter}%
+                                   {\protect\numberline{\thechapter}\uppercase{#2}}%
+                    \else
+                      \addcontentsline{toc}{chapter}{#2}%
+                    \fi
+                    \chaptermark{#1}%
+                    \if@twocolumn
+                      \@topnewpage[\@makechapterhead{#2}]%
+                    \else
+                      \@makechapterhead{#2}%
+                      \@afterheading
+                    \fi}
+\newcommand*\updatechaptername{%
+	\addtocontents{toc}{\protect\renewcommand*\protect\cftchappresnum{}}
+  }
+\makeatother
+\setlength{\parindent}{0.5in}
+\titlespacing*{\section}{0pt}{\baselineskip}{0\baselineskip}
+\titlespacing*{\subsection}{0pt}{\baselineskip}{0\baselineskip}
+
+
+\raggedbottom
+
+\begin{document}
+    \pagenumbering{alph} % this is needed to clear certain issues with the hyperref package
+    %
+    \makeApprovalPage % make the approval page - this is the page that needs to be signed & returned to the thesis/dissertation consultant
+    \addToPDFBookmarks{0}{Front Matter}{rootNode} % create a root node named "Front Matter" in the pdf bookmarks
+    \addToPDFBookmarks{1}{Title}{a} % add a pdf bookmark to the title page
+    \pagenumbering{roman}
+    \setcounter{page}{2}
+    \makeTitlePage % make the title page. Make sure you properly set the \docType
+    %
+    %
+    \makeCopyrightPage % make the copyright page
+    %
+    \addToPDFBookmarks{1}{Abstract}{e} % add a pdf bookmark to the abstract page
+    \addToTOC{ABSTRACT}
+    \include{front-matter/abstract} % your abstract
+    %
+    %\addToPDFBookmarks{1}{Dedication}{b} % add a pdf bookmark to the dedication page
+    %\addToTOC{DEDICATION}
+	%\include{front-matter/dedication} % include the dedication
+    %
+    \addToPDFBookmarks{1}{Acknowledgements}{c} % add a pdf bookmark to the acknowledgements page
+    \addToTOC{ACKNOWLEDGEMENTS}
+	  \include{front-matter/acknowledgments} % include the acknowledgements
+    %
+    %\addToPDFBookmarks{1}{Quote}{d} % add a pdf bookmark to the quotation page
+    %\include{front-matter/quote} % include a quote
+    %
+
+    %
+	\singlespacing
+    \addToPDFBookmarks{0}{Table of Contents}{f}
+    \tableofcontents % generate a table of contents
+    %
+    \addToTOC{LIST OF TABLES} % this will add the list of tables to the Table of Contents (TOC)
+	%\doublespacing
+        {\singlespacing
+          \vspace*{-0.27in}
+	\listoftables % generate a list of tables
+        }
+    %
+    \setcounter{lofdepth}{1}
+    \setcounter{lotdepth}{2}
+    \addToTOC{LIST OF FIGURES} % this will add the list of figures to the Table of Contents (TOC)
+	%\pagenumbering{arabic}
+	%\addToTOC{CHAPTER}
+
+        {\singlespacing
+          %\vspace*{-0.02in}
+          \listoffigures
+        }% generate a list of figures
+    %
+    %\makenomenclature % OPTIONAL
+    %\addToPDFBookmarks{0}{Nomenclature}{g} % OPTIONAL
+    %\printnomenclature[1.25in] % OPTIONAL
+    %
+
+    \cftaddtitleline{toc}{part}{CHAPTER}{} % If needed, can add, but need to remove dot leader in pdf editor.
+
+    \newpage
+    \pagenumbering{arabic}
+    \setcounter{page}{1}
+
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % INCLUDE THE CHAPTERS STARTING WITH THE NOMENCLATURE IF PRESENT
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+    %\include{front-matter/nomenclature} % OPTIONAL
+
+   	\doublespacing
+    \include{chapters/Introduction}
+    \include{chapters/Formulation}
+    \include{chapters/Implementation}
+    \include{chapters/Results}
+    \include{chapters/Conclusions}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % BIBLIOGRAPHY
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    %\makeBibliographyPage % make the bibliography title page - can be edited in ut-thesis-template.tex
+	\addToTOC{REFERENCES}
+
+\bibliographystyle{jfm}
+% Note the spaces between the initials
+	\singlespacing
+
+\bibliography{references-dissertation}
+
+%    \bibliographystyle{aiaa} % uses file "aiaa.bst"
+%	\singlespacing
+%    \bibliography{my-dissertation.bib}
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % APPENDIX - OPTIONAL - COMMENT IF NOT NEEDED
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \cftaddtitleline{toc}{part}{APPENDIX}{} % If needed, can add, but need to remove dot leader in pdf editor.
+    \makeAppendixPage   % make the appendix title page - can be edited in ut-thesis-template.tex
+    \appendix
+    \updatechaptername
+    \renewcommand\thechapter{\Alph{chapter}}
+    \include{back-matter/appendix-1}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % A VITA IS REQUIRED
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   \addToTOC{VITA}
+   \doublespacing
+   \include{back-matter/vita}
+\end{document}
